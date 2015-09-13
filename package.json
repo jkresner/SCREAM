@@ -1,6 +1,6 @@
 {
   "name": "meanair-scream",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "SCREAM is a testing framework for MEAN-stack backends. It provides conventions for screamingly fast testing of requirements stories involving one or many users.",
   "main": "index.js",
   "scripts": {
