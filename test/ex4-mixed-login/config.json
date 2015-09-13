@@ -1,6 +1,6 @@
 {
   "colors": {
-    "spec":               "yellow"
+    "spec":               "white"
   },
   "paths": {
     "app":                "server/app.js",
