@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test/index.js",
-    "example1": "node_modules/mocha/bin/mocha test/ex1-empty/index.js",
+    "example1": "node_modules/mocha/bin/mocha test/ex1-js/index.js",
     "example2": "node_modules/mocha/bin/mocha test/ex2-coffee/index.coffee",
     "example3": "node_modules/mocha/bin/mocha test/ex3-bson-restore/index.coffee"
   },
@@ -30,8 +30,10 @@
     "bson": "0.4.11",
     "chai": "3.2.0",
     "coffee-script": "1.10.0",
+    "colors": "^1.1.2",
     "mocha": "mochajs/mocha#4747437b04",
     "mongodb": "2.0.42",
+    "sinon": "1.16.1",
     "supertest": "1.0.1"
   },
   "devDependencies": {
