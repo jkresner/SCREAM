@@ -1,4 +1,4 @@
-module.exports = function(rootDir, appConfig) {
+module.exports = function(rootDir, appConfig, screamLogin) {
 
   var Fs       = require('fs')
   var Path     = require('path')
@@ -28,17 +28,16 @@ module.exports = function(rootDir, appConfig) {
       })
     })
 
-    global.app        = require(cfg.paths.app).run(appConfig)
+    require(cfg.paths.flavors)
+    require('./lib/http')(cfg)
+    global.LOGIN      = require('./lib/login')(cfg, appConfig, screamLogin)
+    global.APP        = require(cfg.paths.app).run(appConfig)
 
-    require(cfg.paths.flavors||'./lib/flavors')
-    require('./lib/http')(cfg, app)
-    // require('./lib/login')(cfg, app)
   }
 
   return {
     config:   cfg,
     run:      () => runner.run(init, ()=>LOGOUT())
   }
-
 
 }

@@ -1,0 +1,12 @@
+{
+  "colors": {
+    "spec":               "yellow"
+  },
+  "paths": {
+    "app":                "server/app.js",
+    "fixtures":           "fixtures"
+  },
+  "login": {
+    "url":                "/meanair/test-login"
+  }
+}
