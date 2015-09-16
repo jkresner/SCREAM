@@ -1,8 +1,8 @@
 {
   "name": "meanair-scream",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "SCREAM is a testing framework for MEAN-stack backends. It provides conventions for screamingly fast testing of requirements stories involving one or many users.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test/index.js",
     "example1": "node_modules/mocha/bin/mocha test/ex1-js/index.js",
@@ -31,7 +31,8 @@
     "bson": "0.4.11",
     "chai": "3.2.0",
     "coffee-script": "1.10.0",
-    "colors": "^1.1.2",
+    "colors": "^1.1.x",
+    "commander": "2.8.1",
     "mocha": "mochajs/mocha#4747437b04",
     "moment": "2.10.6",
     "mongodb": "2.0.42",
