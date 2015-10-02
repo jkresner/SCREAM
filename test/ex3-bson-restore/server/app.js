@@ -1,4 +1,4 @@
- function run(appConfig) {
+ function run(appConfig, done) {
 
   global.config              = appConfig
 
@@ -15,7 +15,8 @@
       db.Users.findOne({_id:ObjectId(req.params.id)},(e,r)=>res.json(r))
     )
 
-    app.listen(config.http.port, ()=>{}).on('error', (e)=>{})
+    var cb = done || (e => {})
+    app.listen(config.http.port, cb).on('error', cb)
 
   })
 

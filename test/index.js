@@ -1,12 +1,16 @@
-require('../lib/flavors')
-var Scream    = require('../index.js')
-var Path      = require('path')
-var deps      = {Scream,Path}
+//-- Tests for SCREAM itself
+
+global.sinon                 = require('sinon')
+global.chai                  = require('chai')
+global.expect                = chai.expect
 
 
-//-- Tests for SCREAM framework
 describe('Framework Tests', function() {
 
-  describe('Config', require('./framework/spec/config')(deps))
+  // describe('Data TODO', require('./lib/specs/data'))
+  // describe('Db TODO', require('./lib/specs/db'))
+  // describe('Etc. TODO', require('./lib/specs/etc.'))
+  describe('Config', require('./lib/specs/config'))
+  describe('Integration', require('./lib/specs/integration'))
 
 })

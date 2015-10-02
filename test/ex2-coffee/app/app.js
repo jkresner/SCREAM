@@ -1,4 +1,4 @@
- function run(config) {
+ function run(config, done) {
 
   global.config              = config
 
@@ -12,7 +12,8 @@
 
     app.get("/about", (req,res,next)=>res.send("<h1>About</h1>"))
 
-    app.listen(config.http.port, ()=>{}).on('error', (e)=>{})
+    var cb = done || (e => {})
+    app.listen(config.http.port, cb).on('error', cb)
 
   })
 
