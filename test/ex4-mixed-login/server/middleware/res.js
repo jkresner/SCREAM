@@ -9,8 +9,7 @@ var mw = {
 
   notFound() {
     return function(req, res, next) {
-      console.log('this not found ******')
-      next(StatusError(`Resource not found at ${req.originalUrl}`,404))
+      next(StatusError(`Resource not found at ${req.originalUrl}`, 404))
     }
   },
 

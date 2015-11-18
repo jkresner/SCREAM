@@ -9,13 +9,13 @@ describe("Validation", function() {
 
 
   it('Requires a root dir', function(done) {
-    expect(()=>Config({Path},null,{})).to.throw(Error, 'config.json')
+    expect(()=>Config({Path},null,{})).to.throw(Error, 'scream.json')
     done()
   })
 
 
   it('Requires a config file', function(done) {
-    expect(()=>Config({Path},__dirname,{})).to.throw(Error, 'config.json')
+    expect(()=>Config({Path},__dirname,{})).to.throw(Error, 'scream.json')
     done()
   })
 

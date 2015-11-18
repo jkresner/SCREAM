@@ -1,11 +1,10 @@
-SCREAM          = require('../../index')
-
-
 appConfig =
   appViewDir:               "#{__dirname}/server/views"
   auth:
     loginUrl:               '/'
     loggedinUrl:            '/'
+    test:
+      loginUrl:             '/test/auth/login'
   http:
     port:                   3104
     session:
@@ -15,10 +14,7 @@ appConfig =
       secret:               'mirco-consulting'
       cookie:               { httpOnly: true, maxAge: 9000000 }
 
+login = require('./login')
 
-loginLogic = require('./login')
-
-
-
-
-SCREAM(__dirname, appConfig, loginLogic).run()
+SCREAM          = require('../../lib/index')
+SCREAM(__dirname, appConfig, {login}).run()

@@ -1,5 +1,5 @@
-var SCREAM = require('../../index')
+var SCREAM = require('../../lib/index')
 var appConfig = {}
 
 
-SCREAM(__dirname, appConfig).run()
+SCREAM(__dirname, appConfig, {app:'empty'}).run()

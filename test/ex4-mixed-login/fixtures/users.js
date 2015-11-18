@@ -46,7 +46,6 @@ module.exports = {
            space: 976562499,
            collaborators: 0,
            private_repos: 0 },
-        token: ''
       }
     }
   },
@@ -97,7 +96,6 @@ module.exports = {
            space: 976562499,
            collaborators: 0,
            private_repos: 0 },
-        token: '261d9670b74fed23b2098a55d9bccf55a7526661'
       }
     }
   },

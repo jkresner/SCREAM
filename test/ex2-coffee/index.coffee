@@ -1,4 +1,4 @@
-SCREAM          = require('../../index')
+SCREAM          = require('../../lib/index')
 appConfig       = require('./app/setup')('test').config
 
 

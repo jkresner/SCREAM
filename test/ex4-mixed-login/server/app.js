@@ -25,7 +25,15 @@ function run(appConfig, done)
   app.use(passport.initialize())
   app.use(passport.session())
 
-  require(`./routes/_index`).init(app, mw)
+
+  var hbs = require('hbs')
+  hbs.localsAsTemplateData(app)
+  app.locals = Object.assign(app.locals, {})
+
+  mw.authd = mw.res.unauthorized()
+  app.get('/', mw.res.unauthorized(usr => usr, req => '/dashboard'), mw.res.page())
+  app.get(['/dashboard'], mw.authd, mw.res.page())
+  app.post(config.auth.test.loginUrl, config.auth.test.loginHandler)
 
   app.use(mw.res.notFound())
   app.use(mw.res.error())

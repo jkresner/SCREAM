@@ -13,7 +13,7 @@ describe("Example projects", function() {
 
 
   it('Requires a config file', function(done) {
-    expect(()=>Scream(__dirname,{})).to.throw(Error, 'config.json')
+    expect(()=>Scream(__dirname,{})).to.throw(Error, 'scream.json')
     done()
   })
 
@@ -71,7 +71,7 @@ describe("Example projects", function() {
       }
     }
     var login = require(Path.normalize(_dir+'/login'))
-    var ex4 = Scream(_dir,appConfig,login)
+    var ex4 = Scream(_dir,appConfig,{login})
     expect(ex4.config).to.exist
     ex4.run(()=>{
       done()

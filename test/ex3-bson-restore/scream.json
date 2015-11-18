@@ -1,0 +1,19 @@
+{
+  "colors": {
+    "spec":               "yellow"
+  },
+  "mongo": {
+    "collections":        ["users"],
+    "seed": {
+      "model":              "User",
+      "key":                "tst1",
+      "timeout":            20000
+    },
+    "url":                "mongodb://localhost/scream-ex3"
+  },
+  "paths": {
+    "app":                "server/app.js",
+    "fixtures":           "data/fixtures",
+    "bson":               "data/bson"
+  }
+}
