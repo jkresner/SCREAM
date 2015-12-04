@@ -5,7 +5,8 @@ get = ->
 
   IT 'Get user by id', ->
     GET "/users/#{FIXTURE.users.jkg._id}", (jkg) ->
-      expectIdsEqual(jkg._id, FIXTURE.users.jkg._id)
+      EXPECT.equalIds(jkg._id, FIXTURE.users.jkg._id)
+      EXPECT.equalIdAttrs(jkg, FIXTURE.users.jkg)
       expect(jkg.name).to.equal("Jonathon Kresner")
       DONE()
 

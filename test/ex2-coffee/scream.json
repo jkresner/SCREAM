@@ -3,7 +3,7 @@
     "spec":               "magenta"
   },
   "mongo": {
-    "url":                { "appConfig": "mongoUrl" },
+    "url":                "mongodb://localhost/scream-ex2-test",
     "collections":        ["views"]
   },
   "paths": {
