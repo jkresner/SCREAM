@@ -36,7 +36,7 @@
     "chai": "3.2.0",
     "coffee-script": "1.10.0",
     "colors": "1.0.3",
-    "commander": "2.8.1",
+    "commander": "2.9.0",
     "mocha": "2.3.3",
     "moment": "2.10.6",
     "mongodb": "2.0.42",
