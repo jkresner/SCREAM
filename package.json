@@ -1,23 +1,11 @@
 {
   "name": "meanair-scream",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "SCREAM is a testing framework designed for screamingly fast testing of mean stack web apps.",
-  "main": "lib/index.js",
-  "engines": {
-    "node": "4.x.x",
-    "npm": "2.14.x"
-  },
-  "scripts": {
-    "test": "node_modules/mocha/bin/mocha test/index.js",
-    "example1": "node --harmony-destructuring test/ex1-js/index.js",
-    "example2": "coffee --nodejs '--harmony_destructuring' test/ex2-coffee/index.coffee",
-    "example3": "coffee --nodejs '--harmony_destructuring' test/ex3-bson-restore/index.coffee",
-    "example4": "coffee --nodejs '--harmony_destructuring' test/ex4-mixed-login/index.coffee"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jkresner/meanair-scream.git"
-  },
+  "author": "Jonathon Kresner",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/jkresner/meanair-scream/issues" },
+  "repository": { "url": "git+https://github.com/jkresner/meanair-scream.git" },
   "keywords": [
     "MEAN Tests",
     "MEAN-stack Testings",
@@ -25,12 +13,14 @@
     "Express Testings",
     "API Testings"
   ],
-  "author": "Jonathon Kresner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jkresner/meanair-scream/issues"
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test/index.js",
+    "example1": "node --harmony-destructuring test/ex1-js/index.js",
+    "example2": "coffee --nodejs '--harmony_destructuring' test/ex2-coffee/index.coffee",
+    "example3": "coffee --nodejs '--harmony_destructuring' test/ex3-bson-restore/index.coffee",
+    "example4": "coffee --nodejs '--harmony_destructuring' test/ex4-mixed-login/index.coffee"
   },
-  "homepage": "https://github.com/jkresner/meanair-scream#readme",
   "dependencies": {
     "bson": "0.4.15",
     "chai": "3.2.0",
