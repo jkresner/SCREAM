@@ -1,13 +1,14 @@
-# 1. tdlr;
+# 1. Quick overview
 
-SCREAM is a testing framework for MEAN-stack backends (screamingly fast) and 
-is used in all meanair (pronouced "mean'er") packages. It provides conventions 
-for testing more rapidly testing complicated user stories (i.e. requirements) 
-involving one or multiple users.
+SCREAM is a framework built for testing APIs & web apps. It can be used 
+to test any JavaScript function, but is most helpful for complicated user 
+stories (requirements) as it provides a set of simplified conventions 
+to handle test data, make API calls, authenticate users and stub parts of
+your code (like an API call to your payment gateway) which might slow you
+test suite.
 
-The name SCREAM is emphasised in capitals as the loud syntax is used to 
-easily identify normal mocha test code vs SCREAM enhanced helpers which
-reduce both code volume and complexity for repetition boilerplate.
+SCREAM is emphasised in capitals as the loud syntax will help you 
+easily identify normal test code vs SCREAM enhanced helpers.
 
 ## 2. Dependencies
 
