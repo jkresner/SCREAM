@@ -1,6 +1,6 @@
 {
   "name": "meanair-scream",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "SCREAM is a testing framework designed for screamingly fast testing of mean stack web apps.",
   "author": "Jonathon Kresner",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "example1": "node --harmony-destructuring test/ex1-js/index.js",
     "example2": "coffee --nodejs '--harmony_destructuring' test/ex2-coffee/index.coffee",
     "example3": "coffee --nodejs '--harmony_destructuring' test/ex3-bson-restore/index.coffee",
-    "example4": "coffee --nodejs '--harmony_destructuring' test/ex4-mixed-login/index.coffee"
+    "example4": "coffee --nodejs '--harmony_destructuring' test/ex4-mixed-login/index.coffee --verbose"
   },
   "dependencies": {
     "bson": "0.4.15",
