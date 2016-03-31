@@ -1,0 +1,22 @@
+{
+  "colors": {
+    "speed":                 "green",
+    "spec":                  "cyan",
+    "expectederr":           ["magenta","dim"]
+  },
+  "http": {
+    "api":                   { "baseUrl": "/api" }
+  },
+  "init": {
+    "timeout":               2000
+  },
+  "mongo": {
+    "seed": {
+      "dirty":               true,
+      "timeout":             30000
+    }
+  },
+  "stubs": {
+    "on":                    true
+  }
+}

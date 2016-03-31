@@ -16,7 +16,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test/index.js",
-    "example1": "node --harmony-destructuring test/ex1-js/index.js",
+    "example1": "node --harmony-destructuring test/ex1-js-emptyapp/index.js",
     "example2": "coffee --nodejs '--harmony_destructuring' test/ex2-coffee/index.coffee",
     "example3": "coffee --nodejs '--harmony_destructuring' test/ex3-bson-restore/index.coffee",
     "example4": "coffee --nodejs '--harmony_destructuring' test/ex4-mixed-login/index.coffee --verbose"

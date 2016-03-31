@@ -5,6 +5,7 @@ module.exports = {
   Collections: {},
 
   Connect(cb) {
+
     mongodb.MongoClient.connect(config.mongoUri, (err, db) => {
       for (var name of ['Users']) {
         db.collection(name.toLowerCase(), (e, collection) =>
