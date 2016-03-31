@@ -1,19 +1,18 @@
 {
   "colors": {
-    "spec":               "yellow"
+    "spec":                  "yellow"
   },
   "mongo": {
-    "collections":        ["users"],
+    "collections":           ["users"],
     "seed": {
-      "model":              "User",
-      "key":                "tst1",
-      "timeout":            20000
+      "without":             "FIXTURE.users.tst1",
+      "timeout":             15000
     },
-    "url":                "mongodb://localhost/scream-ex3"
+    "url":                   "mongodb://localhost/scream-ex3"
   },
   "paths": {
-    "app":                "server/app.js",
-    "fixtures":           "data/fixtures",
-    "bson":               "data/bson"
+    "app":                   "server/app.js",
+    "fixtures":              "data/fixtures",
+    "bson":                  "data/bson"
   }
 }

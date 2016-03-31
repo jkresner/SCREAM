@@ -1,4 +1,4 @@
-//-- Integration style tests for initializing a SCREAM instance
+//-- Integration style tests for initializing SCREAM instances
 
 var Scream                   = require('../../../lib/index.js')
 var Path                     = require('path')
@@ -71,11 +71,12 @@ describe("Example projects", function() {
       }
     }
     var login = require(Path.normalize(_dir+'/login'))
-    var ex4 = Scream(_dir,appConfig,{login})
-    expect(ex4.config).to.exist
-    ex4.run(()=>{
-      done()
-    })
+    var ex4 = Scream(_dir,{login})
+    expect(ex4.opts.config).to.exist
+    expect(ex4.opts.config.paths).to.exist
+    expect(ex4.opts.config.colors).to.exist
+
+    ex4.run({ config: appConfig, done: () => { done() } })
   })
 
 

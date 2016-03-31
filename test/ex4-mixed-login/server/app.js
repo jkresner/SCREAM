@@ -1,6 +1,6 @@
-function run(appConfig, done)
+function run({config,done})
 {
-  global.config              = appConfig
+  global.config              = config
 
   var express                = require(`express`)
   var app                    = express()

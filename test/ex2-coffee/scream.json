@@ -9,11 +9,5 @@
   "paths": {
     "app":                "app/app.js",
     "specs":              "tests"
-  },
-  "appConfig": {
-    "expect": {
-      "mongoUrl":         "mongodb://localhost/scream-ex2-test",
-      "http.port":        3102
-    }
   }
 }

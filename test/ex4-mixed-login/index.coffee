@@ -14,7 +14,8 @@ appConfig =
       secret:               'mirco-consulting'
       cookie:               { httpOnly: true, maxAge: 9000000 }
 
-login = require('./login')
 
-SCREAM          = require('../../lib/index')
-SCREAM(__dirname, appConfig, {login}).run()
+OPTS = login : require('./login')
+
+SCREAM = require('../../lib/index')(__dirname, OPTS)
+SCREAM.run({config:appConfig})

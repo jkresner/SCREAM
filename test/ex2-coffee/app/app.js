@@ -1,4 +1,4 @@
- function run(config, done) {
+ function run({config}, done) {
 
   global.config              = config
 
