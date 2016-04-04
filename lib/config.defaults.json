@@ -8,6 +8,9 @@
     "api":                   { "baseUrl": "/api" }
   },
   "init": {
+    "fail": {
+      "filter":              "node_modules|_tickDomainCallback|forEach|runInThisContext|NativeConnection|doNTCallback0|module."
+    },
     "timeout":               2000
   },
   "mongo": {
