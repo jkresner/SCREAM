@@ -4,7 +4,7 @@ appConfig =
     loginUrl:               '/'
     loggedinUrl:            '/'
     test:
-      loginUrl:             '/test/auth/login'
+      loginFnName:          'link'
   http:
     port:                   3104
     session:
@@ -15,7 +15,9 @@ appConfig =
       cookie:               { httpOnly: true, maxAge: 9000000 }
 
 
-OPTS = login : require('./login')
+OPTS =
+  login: require('./login')(appConfig)
+
 
 SCREAM = require('../../lib/index')(__dirname, OPTS)
 SCREAM.run({config:appConfig})

@@ -17,7 +17,7 @@ var anon = function() {
 
 var authd = function() {
 
-  IT('/ 302 to /dashboard', () =>
+  SKIP('/ 302 to /dashboard', () =>
     LOGIN({key:'tst1'}, (session) => {
       EXPECT.equalIds(session._id, FIXTURE.users.tst1._id)
       expect(session.name).to.equal('Expert One')
@@ -28,7 +28,7 @@ var authd = function() {
     }))
 
 
-  IT('/dashboard OK', () =>
+  SKIP('/dashboard OK', () =>
     LOGIN({key:'tst5'}, (session) => {
       EXPECT.equalIds(session._id, FIXTURE.users.tst5._id)
       PAGE('/dashboard', { status: 200 }, (text) => {

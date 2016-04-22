@@ -33,7 +33,12 @@ function run({config,done})
   mw.authd = mw.res.unauthorized()
   app.get('/', mw.res.unauthorized(usr => usr, req => '/dashboard'), mw.res.page())
   app.get(['/dashboard'], mw.authd, mw.res.page())
-  app.post(config.auth.test.loginUrl, config.auth.test.loginHandler)
+
+
+  // config.auth.test.loginFn = require('./logic/auth/link')().exec
+  // console.log('config.auth.test.loginUrl', config.auth.test.loginUrl)
+  // app.post(config.auth.test.loginUrl, config.auth.test.loginHandler)
+
 
   app.use(mw.res.notFound())
   app.use(mw.res.error())

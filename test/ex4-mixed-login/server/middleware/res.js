@@ -42,6 +42,7 @@ var mw = {
 
   error() {
     return function(e, req, res, next) {
+      console.log('error.mw', e.stack)
       res.status(e.status || 400)
 
       if (e.status == 404)

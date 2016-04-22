@@ -13,7 +13,8 @@ module.exports = function() {
 
     // validation(user, provider, profile) {},
 
-    logic(provider, profile, done) {
+    exec(provider, profile, done) {
+      this.locals = {}
       return loginGithub.call(this, profile, done)
     }
 
