@@ -1,6 +1,6 @@
 {
   "name": "meanair-scream",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "SCREAM is a testing framework designed for screamingly fast testing of mean stack web apps.",
   "author": "Jonathon Kresner",
   "license": "MIT",
