@@ -1,7 +1,12 @@
 {
   "colors": {
+    "seed":                  "white",
     "speed":                 "green",
-    "spec":                  "cyan",
+    "spec":                  "white",
+    "subspec":               "white",
+    "init":                  "gray",
+    "todo":                  "yellow",
+    "error":                 "red",
     "expectederr":           ["magenta","dim"]
   },
   "http": {
