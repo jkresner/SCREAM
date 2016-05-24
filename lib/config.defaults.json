@@ -12,7 +12,7 @@
   "http": {
     "api":                   { "baseUrl": "/api" }
   },
-  "init": {
+  "setup": {
     "fail": {
       "filter":              "node_modules|_tickDomainCallback|forEach|runInThisContext|NativeConnection|doNTCallback0|module."
     },
