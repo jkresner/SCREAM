@@ -14,13 +14,13 @@
   },
   "setup": {
     "fail": {
-      "filter":              "node_modules|_tickDomainCallback|forEach|runInThisContext|NativeConnection|doNTCallback0|module."
+      "filter":              "exports.runInThisContext|coffee-script/register"
     },
     "timeout":               2000
   },
   "mongo": {
     "seed": {
-      "dirty":               true,
+      "dirty":               false,
       "timeout":             30000
     }
   },
