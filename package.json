@@ -1,6 +1,6 @@
 {
   "name": "meanair-scream",
-  "version": "0.6.4",
+  "version": "0.6.5-beta.1",
   "description": "SCREAM is a testing framework designed for screamingly fast testing of mean stack web apps.",
   "author": "Jonathon Kresner",
   "license": "MIT",
@@ -32,7 +32,8 @@
     "mongodb": "2.0.42",
     "sinon": "1.17.1",
     "sinon-chai": "2.8.0",
-    "supertest": "1.0.1"
+    "supertest": "1.0.1",
+    "syntax-error": "1.1.6"
   },
   "devDependencies": {
     "body-parser": "1.13.2",
