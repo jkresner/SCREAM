@@ -7,12 +7,16 @@ global.expect                = chai.expect
 
 describe('Framework Tests', function() {
 
-  // describe('Data TODO', require('./lib/specs/data'))
-  // describe('Db TODO', require('./lib/specs/db'))
-  // describe('Etc. TODO', require('./lib/specs/etc.'))
-  describe('UTIL', require('./lib/specs/util.obj'))
-  // describe('Config', require('./lib/specs/config'))
-  // describe('Fixture', require('./lib/specs/fixture'))
-  // describe('Integration', require('./lib/specs/integration'))
+  describe('Lib', function() {
+  // describe('TODO Config', require('./lib/specs/config'))
+  // describe('TODO Data', require('./lib/specs/data'))
+  // describe('TODO Db', require('./lib/specs/db'))
+  // describe('TODO Fixture', require('./lib/specs/fixture'))
+
+  })
+
+  describe('Integration', function() {
+  // describe('TODO Integration', require('./lib/specs/integration'))
+  })
 
 })
