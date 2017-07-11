@@ -4,6 +4,7 @@
   "description": "Write node.js apps fast",
   "author": "Jonathon Kresner",
   "license": "MIT",
+  "repository": "https://github.com/jkresner/scream.git",
   "keywords": [
     "MEAN Tests",
     "MEAN-stack Testings",
