@@ -19,6 +19,7 @@ describe('Framework Tests', function() {
 // describe('TODO Data', require('./lib/specs/data'))
 // describe('TODO Db', require('./lib/specs/db'))
   describe('FIXTURE', require('./lib/specs/fixture'))
+  describe('STUB', require('./lib/specs/stub'))
 
 })
 

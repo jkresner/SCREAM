@@ -41,7 +41,7 @@ module.exports = () => {
       expect(key).to.exist
       var jkU = FIXTURE.user[key]
       expect(jkU).to.exist
-      expect(jkU._id.toString()).not.equal(jk._id)
+      expect(jkU._id.toString()).not.equal(jk._id.toString())
       expect(jkU.name).not.equal(jk.name)
       expect(jkU.company).to.equal(jk.company)
       expect(jkU.age).to.equal(jk.age)
@@ -53,7 +53,7 @@ module.exports = () => {
       var key = FIXTURE.uniquify('user', 'jk', 'name company age')
       var jkU = FIXTURE.user[key]
       expect(jkU).to.exist
-      expect(jkU._id.toString()).not.equal(jk._id)
+      expect(jkU._id.toString()).not.equal(jk._id.toString())
       expect(jkU.name).not.equal(jk.name)
       expect(jkU.name.indexOf(jk.name)).not.equal(-1)
       expect(jkU.company).not.equal(jk.company)
@@ -61,6 +61,21 @@ module.exports = () => {
       expect(jkU.age).not.equal(jk.age)
       done()
     })
+
+    it(`Uniquify Fixture.user.ag['name auth.gh.name auth.gh.emails.email']`, function(done) {
+      var {ag} = FIXTURE.user
+      var key = FIXTURE.uniquify('user', 'ag', 'name auth.gh.name auth.gh.emails.email')
+      var agU = FIXTURE.user[key]
+      expect(agU).to.exist
+      expect(agU._id.toString()).not.equal(ag._id.toString())
+      expect(agU.name).not.equal(ag.name)
+      expect(agU.auth.gh.name).not.equal(ag.auth.gh.name)
+      expect(agU.auth.gh.emails[0].email).not.equal(ag.auth.gh.emails[0].email)
+      expect(agU.auth.gh.emails[0].email.indexOf(ag.auth.gh.emails[0].email)).not.equal(-1)
+      expect(agU.auth.gh.emails[0].verified === true).to.be.true
+      done()
+    })
+
 
   })
 

@@ -1,6 +1,6 @@
 {
   "name": "screamjs",
-  "version": "0.0.7",
+  "version": "0.7.0",
   "description": "Write node.js apps fast",
   "author": "Jonathon Kresner",
   "license": "MIT",
