@@ -14,7 +14,7 @@
   },
   "setup": {
     "fail": {
-      "filter":              "exports.runInThisContext|coffee-script/register"
+      "filter":              "emitCloseNT|next_tick"
     },
     "timeout":               2000
   },

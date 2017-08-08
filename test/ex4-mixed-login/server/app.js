@@ -35,9 +35,9 @@ function run({config,done})
   app.get(['/dashboard'], mw.authd, mw.res.page())
 
 
-  // config.auth.test.loginFn = require('./logic/auth/link')().exec
-  // console.log('config.auth.test.loginUrl', config.auth.test.loginUrl)
-  // app.post(config.auth.test.loginUrl, config.auth.test.loginHandler)
+  console.log('config.auth', config.auth)
+  app.post(config.auth.loginUrl, require('./logic/auth/link')().exec)
+  app.post(config.auth.test.login.url, require('./logic/auth/link')().exec)
 
 
   app.use(mw.res.notFound())

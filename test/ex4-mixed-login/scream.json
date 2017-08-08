@@ -3,7 +3,6 @@
     "spec":               "white"
   },
   "paths": {
-    "app":                "server/app.js",
     "fixtures":           "fixtures"
   }
 }
