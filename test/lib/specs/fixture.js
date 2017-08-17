@@ -12,12 +12,6 @@ module.exports = () => {
   })
 
 
-  describe("Clone", function() {
-    it('Fixture data cannot be changed')
-    it('Change cloned fixture data')
-  })
-
-
   describe("Uniquify", function() {
 
     it(`Fail Fixture['test'] undefined`, function() {

@@ -1,6 +1,6 @@
 {
   "name": "screamjs",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Write node.js apps fast",
   "author": "Jonathon Kresner",
   "license": "MIT",
@@ -16,9 +16,9 @@
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test/index.js",
     "ex1": "node test/ex1-js-emptyapp/index.js",
-    "ex2": "coffee test/ex2-coffee/index.coffee",
+    "ex2": "coffee test/ex2-coffee/index.coffee --verbose",
     "ex3": "coffee test/ex3-bson-restore/index.coffee",
-    "ex4": "coffee test/ex4-mixed-login/index.coffee --verbose"
+    "ex4": "coffee test/ex4-mixed-login/index.coffee"
   },
   "dependencies": {
     "bson": "0.4.15",
@@ -37,11 +37,9 @@
   },
   "devDependencies": {
     "body-parser": "1.17.2",
-    "cookie-parser": "1.4.3",
     "express": "4.15.3",
     "express-session": "1.15.3",
     "hbs": "3.1.0",
-    "passport": "0.3.0",
-    "passport-github": "1.0.0"
+    "passport": "0.3.0"
   }
 }

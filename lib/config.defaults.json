@@ -6,8 +6,7 @@
     "subspec":               "white",
     "init":                  "gray",
     "todo":                  "yellow",
-    "error":                 "red",
-    "expectederr":           ["magenta","dim"]
+    "error":                 "red"
   },
   "http": {
     "api":                   { "baseUrl": "/api" }

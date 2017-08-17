@@ -1,52 +1,40 @@
-function run({config,done})
-{
-  global.config              = config
+function run(config, done) {
 
-  var express                = require(`express`)
-  var app                    = express()
-
-  app.set(`views`, config.appViewDir)
-  app.set(`view engine`, `hbs`)
-
-
-  var cookieParser           = require(`cookie-parser`)
+  var {http,test}            = config
+  var logic                  = { oauth: require('./logic/auth/oauth') }
+  var mw                     = require(`./middleware`)(config)
   var bodyParser             = require(`body-parser`)
   var session                = require(`express-session`)
-  app.use(bodyParser.json())
-  app.use(bodyParser.urlencoded({extended: true}))
-  app.use(cookieParser(config.http.session.secret))
-  app.use(session(config.http.session))
-
-  var mw                   = require(`./middleware/_index`)(app)
-
-  var passport             = require('passport')
-  passport.serializeUser((u,cb)=>cb(null,{_id:u._id, name:u.name}))
-  passport.deserializeUser((session,cb)=>cb(null,session))
-  app.use(passport.initialize())
-  app.use(passport.session())
+  var express                = require(`express`)
+  var app                    = express()
+  var passport               = require('passport')
+  passport.serializeUser((user, cb) => cb(null, user))
+  passport.deserializeUser((session, cb) => cb(null, session))
 
 
-  var hbs = require('hbs')
-  hbs.localsAsTemplateData(app)
-  app.locals = Object.assign(app.locals, {})
+  app.set('view engine', 'hbs')
+     .set(`views`, __dirname)
 
-  mw.authd = mw.res.unauthorized()
-  app.get('/', mw.res.unauthorized(usr => usr, req => '/dashboard'), mw.res.page())
-  app.get(['/dashboard'], mw.authd, mw.res.page())
+     .use(bodyParser.json())
+     .use(session(config.http.session))
+     .use(passport.initialize())
+     .use(passport.session())
 
+     .get('/', mw.page)
+     .get('/dashboard', mw.authd, mw.page)
 
-  console.log('config.auth', config.auth)
-  app.post(config.auth.loginUrl, require('./logic/auth/link')().exec)
-  app.post(config.auth.test.login.url, require('./logic/auth/link')().exec)
+     .post('/auth/login', mw.admit(logic.oauth))
 
-
-  app.use(mw.res.notFound())
-  app.use(mw.res.error())
-
-  var cb = done || (e => {})
-  app.listen(config.http.port, cb).on('error', cb)
+  if (test) {
+    test.login.logic = logic.oauth
+    app.post(test.login.url, mw.admit(test.login.handler))
+  }
 
   return app
+    .use(mw.notFound)
+    .use(mw.error)
+    .listen(http.port, done).on('error', done)
+
 }
 
 

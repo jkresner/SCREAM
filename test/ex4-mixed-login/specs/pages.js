@@ -1,15 +1,16 @@
 var anon = function() {
 
-  IT('/ OK', () =>
-    PAGE('/', { authenticated: false }, (html) => {
-      expect(html).inc('Index HBS')
+  IT('[200] /', () =>
+    PAGE('/', { session: null }, html => {
+      expect(html).inc(['Index HBS','Login please'])
+      expect(html.indexOf('Welcome') == -1).to.be.true
       DONE()
     }))
 
 
-  IT('/dashboard 302 to /?returnTo=/dashboard', () =>
-    PAGE('/dashboard', { authenticated: false, status: 302 }, (text) => {
-      expect(text).inc('Redirecting to /?returnTo=/dashboard')
+  IT('[302] /dashboard => /login', () =>
+    PAGE('/dashboard', { session: null, status: 302 }, text => {
+      expect(text).inc('Redirecting to /login')
       DONE()
     }))
 
@@ -17,22 +18,22 @@ var anon = function() {
 
 var authd = function() {
 
-  IT.only('/ 302 to /dashboard', () =>
-    LOGIN({key:'tst1'}, (session) => {
-      expect(session._id.toString()).to.equal(FIXTURE.users.tst1._id.toString())
-      expect(session.name).to.equal('Expert One')
-      PAGE('/', { status: 302 }, (text) => {
-        expect(text).to.inc('Redirecting to /dashboard')
+  IT('[302] / => /dashboard', () =>
+    LOGIN('tst1', { status: 302 }, text => {
+      expect(text).inc('Redirecting to /dashboard')
+      PAGE('/dashboard', { status: 200 }, html => {
+        expect(html).inc(['Index HBS',`Welcome ${FIXTURE.users.tst1.name}!`])
+        expect(html.indexOf('Please login') == -1).to.be.true
         DONE()
       })
     }))
 
 
-  IT('/dashboard OK', () =>
-    LOGIN({key:'tst5'}, (session) => {
-      expect(session._id.toString()).to.equal(FIXTURE.users.tst5._id.toString())
-      PAGE('/dashboard', { status: 200 }, (text) => {
-      expect(text).inc('Index HBS')
+  IT('[200] /', () =>
+    LOGIN('tst5', {}, text => {
+      PAGE('/', { status: 200 }, html => {
+        expect(html).inc(['Index HBS',`Welcome ${FIXTURE.users.tst5.name}!`])
+        expect(html.indexOf('Please login') == -1).to.be.true
         DONE()
       })
     }))

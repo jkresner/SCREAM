@@ -1,32 +1,30 @@
-appConfig =
-  appViewDir:               "#{__dirname}/server/views"
-  auth:
-    loginUrl:               '/auth/login'
-    loggedinUrl:            '/'
-    test:
-      login:
-        fnName:               'link'
-        url:                  '/login'
-  http:
-    port:                   3104
-    session:
-      saveUninitialized:    true
-      resave:               false
-      name:                 'mirco-consult'
-      secret:               'mirco-consulting'
-      cookie:               { httpOnly: true, maxAge: 9000000 }
+SCREAM                      = require('../../lib/index')
 
-OPTS =
+
+opts =
   login:
-    clearSessions: true
-    test: appConfig.auth.test
-    fn: (data, cb) ->
-      console.log('login.testHandler'.white, req.body)
-      profile = FIXTURE.users[req.body.key].linked.gh
-      token = _.get(profile,"tokens.athr.token") || "test"
-      config.test.auth.loginFn.call @, 'gh', profile, {token}, cb
+    url:                   '/auth/test/login'
+    handler: (data, cb) ->
+      user = FIXTURE.users[data.key]
+      profile = user.linked.gh
+      opts.login.logic.call @, profile, cb
 
 
-SCREAM = require('../../lib/index')(OPTS)
-SCREAM.run (done) ->
-  require('./server/app').run {config:appConfig,done}
+SCREAM(opts).run (done) ->
+
+  config =
+    auth:
+      loginUrl:               '/login'
+      loggedinUrl:            '/dashboard'
+    http:
+      port:                   3104
+      session:
+        saveUninitialized:    true
+        resave:               false
+        name:                 'mirco-consult'
+        secret:               'mirco-consulting'
+        cookie:               maxAge: 9000000
+    test:
+      login:                opts.login
+
+  require('./server/app').run(config, done)

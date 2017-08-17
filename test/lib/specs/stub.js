@@ -156,8 +156,6 @@ module.exports = () => {
         delete global.FIXTURE
       })
 
-      // it(`STUB.wrapper(<name>).cb(<fnName>, FIXURE.wrapper[<key>])`)
-      // it(`STUB.wrapper(<name>).api(<fnPath>).params(args:[])`)
 
       it(`STUB.wrapper(<name>).api(<fnPath>).err(<FIXTURE.key:string>)`, function(done) {
         var stub = STUB.wrapper('custom').api('users.get').err('err1')
@@ -173,7 +171,18 @@ module.exports = () => {
         })
       })
 
-      it(`STUB.wrapper(<name>).api(<fnPath>).err(<e:Error>)`)
+      it(`STUB.wrapper(<name>).api(<fnPath>).err(<e:Error>)`, function(done) {
+        var stub = STUB.wrapper('custom').api('users.get').err(Error("Custom Wrapper instanceof Error"))
+        Wrappers.custom.searchUsers('blow', (e,r) => {
+          expect(called).to.equal(1)
+          expect(stub.called).to.be.true
+          expect(stub.args[0][0]).to.equal('/users?s=blow')
+          expect(r).to.be.undefined
+          expect(e.message).to.equal("Custom Wrapper instanceof Error")
+          stub.restore()
+          done()
+        })
+      })
 
       it(`STUB.wrapper(<name>).api(<fnPath>).success(<FIXTURE.key:string>)`, function(done) {
         var stub = STUB.wrapper('custom').api('users.get').success('searchUsers1')
@@ -193,7 +202,18 @@ module.exports = () => {
         })
       })
 
-      it(`STUB.wrapper(<name>).api(<fnPath>).success(r:{})`)
+      it(`STUB.wrapper(<name>).api(<fnPath>).success(r:{})`, function(done) {
+        var stub = STUB.wrapper('custom').api('users.get').success({title:'Custom Wrapper data obj'})
+        Wrappers.custom.searchUsers('bling', (e, r) => {
+          expect(called).to.equal(1)
+          expect(stub.called).to.be.true
+          expect(stub.args[0][0]).to.equal('/users?s=bling')
+          expect(e).to.be.null
+          expect(r.title).to.equal('Custom Wrapper data obj')
+          stub.restore()
+          done()
+        })
+      })
 
     })
 
