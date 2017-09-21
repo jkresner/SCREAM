@@ -1,12 +1,9 @@
 module.exports = function() {
 
-  DESCRIBE("TRUTH", function() {
-
-    IT('/about => OK', function() {
-      expect(true).to.be.true
-      DONE()
-    })
-
+  IT('expect(true).to.be.true', function() {
+    expect(true).to.be.true
+    expect(true).true
+    DONE()
   })
 
 }

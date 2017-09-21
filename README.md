@@ -1,7 +1,8 @@
-SCREAM is an opinionated framework to help write terser, more legible and 
-maintainable node.js tests. SCREAM shines with complicated user stories 
-- e.g. involving many users - which cam be overwhelmingly difficult and 
-pages long using vanilla JavaScript testing frameworks.
+SCREAM helps you write terser, more legible and maintainable node.js tests. 
+Complicated user stories involving many users etc. can be overwhelmingly 
+difficult and pages long using vanilla JavaScript testing frameworks.
+SCREAM shines in these types of situations. If you have a real world app
+you want to maintain, try SCREAM it out!
 
 ## Features
 

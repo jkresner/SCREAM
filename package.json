@@ -1,16 +1,17 @@
 {
   "name": "screamjs",
-  "version": "0.7.1",
-  "description": "Write node.js apps fast",
+  "version": "0.7.2",
+  "description": "Test node.js apps faster",
   "author": "Jonathon Kresner",
   "license": "MIT",
   "repository": "https://github.com/jkresner/scream.git",
   "keywords": [
+    "Node.js Testing",
     "MEAN Tests",
-    "MEAN-stack Testings",
-    "JavaScript Testings",
-    "Express Testings",
-    "API Testings"
+    "MEAN-stack Testing",
+    "JavaScript Testing",
+    "Express Tests",
+    "API Testing"
   ],
   "main": "lib/index.js",
   "scripts": {
@@ -25,7 +26,7 @@
     "chai": "4.0.2",
     "coffee-script": "1.9.3",
     "colors": "1.1.2",
-    "commander": "2.9.0",
+    "commander": "2.11.0",
     "lodash": "4.17.4",
     "mocha": "3.4.2",
     "moment": "2.10.6",

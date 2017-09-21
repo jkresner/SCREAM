@@ -2,13 +2,11 @@ module.exports = () => {
 
 
   before(function() {
-    global.deps = { Util: require('../../../lib/_util') }
     global.FIXTURE = require('../../../lib/data.fixture')
   })
 
   after(function() {
     delete global.FIXTURE
-    delete global.deps
   })
 
 

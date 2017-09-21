@@ -1,8 +1,8 @@
 {
   "colors": {
     "seed":                  "white",
-    "speed":                 "green",
     "spec":                  "white",
+    "speed":                 "green",
     "subspec":               "white",
     "init":                  "gray",
     "todo":                  "yellow",
@@ -11,18 +11,27 @@
   "http": {
     "api":                   { "baseUrl": "/api" }
   },
-  "setup": {
-    "fail": {
-      "filter":              "emitCloseNT|next_tick"
-    },
-    "timeout":               2000
+  "mocha": {
+    "bail":                  true,
+    "fullStackTrace":        false,
+    "reporter":              "spec"
   },
-  "mongo": {
+  "db": {
+    "mongo": {
+    },
     "seed": {
       "dirty":               false,
       "timeout":             30000
     }
   },
+  "log": {
+    "filter_fail":           "emitCloseNT|next_tick"
+  },
+  "paths":                   {},
+  "setup": {
+    "timeout":               2000
+  },
+  "specs":                   "all",
   "stubs": {
     "on":                    true
   }

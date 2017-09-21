@@ -21,13 +21,6 @@ var custom = {
     called = called + 1
     this.api.users.get(`/users?s=${searchToken}`, opts, done)
   }
-  // searchUsers(searchToken, done) {
-  //   var opts = { fields: 'name first' }
-  //   var onError = (e) => done(e)
-  //   var onSuccess = (r) => done(null, r)
-  //   called = called + 1
-  //   this.api.users.get(`/users?s=${searchToken}`, opts, onError, onSuccess)
-  // }
 }
 
 
@@ -141,7 +134,7 @@ module.exports = () => {
     })
 
 
-    describe("STUB.wrapper", function() {
+    describe("wrapper", function() {
 
       before(function() {
         global.Wrappers = { custom }
@@ -213,6 +206,55 @@ module.exports = () => {
           stub.restore()
           done()
         })
+      })
+
+    })
+
+    describe("globals", function() {
+
+      before(function() {
+        global.stub_var1 = 10
+        global.stub_var2 = { on: true }
+        global.stub_var3 = function() { return "unstubbed" }
+      })
+
+      after(function() {
+        delete global.stub_var1
+        delete global.stub_var2
+        delete global.stub_var3
+      })
+
+      it(`STUB.globals()`, function(done) {
+        expect(global.stub_var1).to.equal(10)
+        expect(global.stub_var2.on).to.equal(true)
+        expect(global.stub_var3()).to.equal("unstubbed")
+        STUB.globals({stub_var1:22,stub_var2:{on:"FALSE"}})
+        expect(global.stub_var1).to.equal(22)
+        expect(global.stub_var2.on).to.equal("FALSE")
+        expect(global.stub_var3()).to.equal("unstubbed")
+        STUB.restore.globals()
+        expect(global.stub_var1).to.equal(10)
+        expect(global.stub_var2.on).to.equal(true)
+        expect(global.stub_var3()).to.equal("unstubbed")
+        done()
+      })
+
+      it(`STUB.globals() called sequentially`, function(done) {
+        expect(global.stub_var1).to.equal(10)
+        expect(global.stub_var2.on).to.equal(true)
+        expect(global.stub_var3()).to.equal("unstubbed")
+        STUB.globals({stub_var1:33})
+        expect(global.stub_var1).to.equal(33)
+        expect(global.stub_var2.on).to.equal(true)
+        STUB.globals({stub_var3:x=>"STUBBED"})
+        expect(global.stub_var1).to.equal(33)
+        expect(global.stub_var2.on).to.equal(true)
+        expect(global.stub_var3()).to.equal("STUBBED")
+        STUB.restore.globals()
+        expect(global.stub_var1).to.equal(10)
+        expect(global.stub_var2.on).to.equal(true)
+        expect(global.stub_var3()).to.equal("unstubbed")
+        done()
       })
 
     })

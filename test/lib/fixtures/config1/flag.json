@@ -1,0 +1,16 @@
+{
+  "colors": {
+    "spec":                  "yellow"
+  },
+  "mongo": {
+    "collections":           ["users"],
+    "seed": {
+      "without":             "FIXTURE.users.auser"
+    },
+    "url":                   "mongodb://localhost/scream-test-config"
+  },
+  "paths": {
+    "fixtures":              "..",
+    "bson":                  "../../bson"
+  }
+}
