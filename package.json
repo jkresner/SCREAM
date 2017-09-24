@@ -1,6 +1,6 @@
 {
   "name": "screamjs",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Test node.js apps faster",
   "author": "Jonathon Kresner",
   "license": "MIT",
@@ -33,8 +33,7 @@
     "mongodb": "2.2.29",
     "sinon": "2.3.6",
     "sinon-chai": "2.11.0",
-    "supertest": "3.0.0",
-    "syntax-error": "1.3.0"
+    "supertest": "3.0.0"
   },
   "devDependencies": {
     "body-parser": "1.17.2",
