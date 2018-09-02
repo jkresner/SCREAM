@@ -8,7 +8,8 @@
       "without":             "FIXTURE.users.tst1",
       "timeout":             15000
     },
-    "url":                   "mongodb://localhost/scream-ex3"
+    "url":                   "mongodb://localhost/",
+    "dbName":                "scream-ex3"
   },
   "paths": {
     "app":                   "server/app.js",

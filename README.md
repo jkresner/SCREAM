@@ -1,9 +1,9 @@
-SCREAM helps you write terser, more legible and maintainable node.js tests. 
-Complicated user stories involving many users etc. can be overwhelmingly 
-difficult and pages long using vanilla JavaScript testing frameworks.
-SCREAM shines in these types of situations. If you have a real world app
-you want to maintain, try SCREAM it out!
+# Testing node apps with SCREAMjs
 
+SCREAM helps you write terse, legible and maintainable tests. 
+
+SCREAM makes testing complicated user stories usually
+overwhelming with vanilla JavaScript tests more manageable and efficient.
 ## Features
 
 - Mix and match .coffee & .js from one spec to another
@@ -18,14 +18,39 @@ you want to maintain, try SCREAM it out!
 2. [mongodb v3+](https://www.mongodb.org/downloads)
 3. `npm install`
 
-## Example mini apps
+## 4 example apps with SCREAMjs tests
 
-````
-npm run-script ex1
-npm run-script ex2
-npm run-script ex3
-npm run-script ex4
-```
+##### **ex1** simple console app
+
+`npm run-script ex1`
+
+- js tests
+- example SCREAM folder structure
+- empty `scream.json` config
+
+##### **ex2** express/mongodb app
+
+`npm run-script ex2`
+
+- coffee tests
+- `scream.json` config with mongodb config
+
+##### **ex3** mongodb data bootstrap,
+
+`npm run-script ex3`
+
+- Both coffee & js tests 
+- Bootstrap db.Users collection from users.bson file before tests run
+- FIXTURE.users 
+
+##### **ex4** express/mongodb/passport app
+
+`npm run-script ex4`
+
+- coffee tests 
+- LOGIN changes current users
+- PAGE tests expected 200
+
 
 ## Tests
 

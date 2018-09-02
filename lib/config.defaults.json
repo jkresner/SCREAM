@@ -18,6 +18,7 @@
   },
   "db": {
     "mongo": {
+      "url":                "mongodb://localhost"
     },
     "seed": {
       "dirty":               false,

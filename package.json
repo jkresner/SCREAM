@@ -1,17 +1,15 @@
 {
   "name": "screamjs",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "Test node.js apps faster",
-  "author": "Jonathon Kresner",
+  "author": "JK",
   "license": "MIT",
   "repository": "https://github.com/jkresner/scream.git",
   "keywords": [
-    "Node.js Testing",
-    "MEAN Tests",
-    "MEAN-stack Testing",
-    "JavaScript Testing",
-    "Express Tests",
-    "API Testing"
+    "node.js testing",
+    "javascript testing",
+    "express tests",
+    "node API testing"
   ],
   "main": "lib/index.js",
   "scripts": {
@@ -23,23 +21,23 @@
   },
   "dependencies": {
     "bson": "0.4.15",
-    "chai": "4.0.2",
-    "coffee-script": "1.9.3",
+    "chai": "4.1.2",
+    "coffeescript": "2.3.1",
     "colors": "1.1.2",
-    "commander": "2.11.0",
-    "lodash": "4.17.4",
-    "mocha": "3.4.2",
-    "moment": "2.10.6",
-    "mongodb": "2.2.29",
-    "sinon": "2.3.6",
-    "sinon-chai": "2.11.0",
-    "supertest": "3.0.0"
+    "commander": "2.17.1",
+    "lodash": "4.17.10",
+    "mocha": "5.2.0",
+    "moment": "2.22.2",
+    "mongodb": "3.0.11",
+    "sinon": "6.1.5",
+    "sinon-chai": "3.2.0",
+    "supertest": "3.1.0"
   },
   "devDependencies": {
-    "body-parser": "1.17.2",
-    "express": "4.15.3",
-    "express-session": "1.15.3",
-    "hbs": "3.1.0",
-    "passport": "0.3.0"
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "express-session": "1.15.6",
+    "hbs": "4.0.1",
+    "passport": "0.4.0"
   }
 }
