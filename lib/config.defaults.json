@@ -26,7 +26,8 @@
     }
   },
   "log": {
-    "filter_fail":           "emitCloseNT|next_tick"
+    "filter_fail":           "emitCloseNT|next_tick",
+    "stackTraceLimit":       20
   },
   "paths":                   {},
   "setup": {

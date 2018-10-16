@@ -1,15 +1,33 @@
-# Testing node apps with SCREAMjs
+# SCREAMjs
 
-SCREAM helps you write terse, legible and maintainable tests. 
+## Testing Node.js apps
 
-SCREAM makes testing complicated user stories usually
-overwhelming with vanilla JavaScript tests more manageable and efficient.
+Testing real-world scenarios and data is cumbersome. Setting up and replaying 
+conditions with many users and long work flows requires lots of vanilla JS code.
+
+SCREAM helps you write and stay on top of terse, legible and maintainable tests. 
+
+## Safely execute tasks
+
+Migrations
+
+## Flags
+
 ## Features
 
-- Mix and match .coffee & .js from one spec to another
-- DATA.seed from MongoDB .bson files
-- FIXTURE conventions
+1. Execute efficiently
+
 - STUB conventions
+- Disable stun flag
+
+2. Seed data 
+
+- Currently support using MongoDB .bson files
+
+- Mix and match .coffee & .js from one spec to another
+
+- FIXTURE conventions
+
 - HTTP session & login conventions
 
 ## Setup
