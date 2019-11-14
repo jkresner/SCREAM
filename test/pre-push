@@ -1,6 +1,0 @@
-#!/bin/sh
-./node_modules/mocha/bin/mocha test/index.js;
-node ./test/ex1-js-emptyapp/index.js;
-./node_modules/coffeescript/bin/coffee ./test/ex2-coffee/index.coffee;
-./node_modules/coffeescript/bin/coffee ./test/ex3-bson-restore/index.coffee;
-./node_modules/coffeescript/bin/coffee ./test/ex4-mixed-login/index.coffee;

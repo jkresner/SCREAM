@@ -24,6 +24,7 @@ describe('Framework', function() {
   describe('FIXTURE', require('./lib/specs/fixture'))
   describe('Slang', require('./lib/specs/slang'))
   describe('STUB', require('./lib/specs/stub'))
+  describe('Http', require('./lib/specs/http'))  
 
 })
 
