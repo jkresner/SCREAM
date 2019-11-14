@@ -1,15 +1,15 @@
 {
   "name": "screamjs",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Test node.js apps faster",
-  "author": "JK",
+  "author": "jkresner",
   "license": "MIT",
   "repository": "https://github.com/jkresner/scream.git",
   "keywords": [
     "node.js testing",
     "javascript testing",
-    "express tests",
-    "node API testing"
+    "expressjs tests",
+    "node rest API testing"
   ],
   "main": "lib/index.js",
   "scripts": {
@@ -20,24 +20,22 @@
     "ex4": "coffee test/ex4-mixed-login/index.coffee"
   },
   "dependencies": {
-    "bson": "0.4.15",
-    "chai": "4.1.2",
-    "coffeescript": "2.3.1",
+    "bson": "4.0.2",
+    "chai": "4.2.0",
+    "coffeescript": "2.4.1",
     "colors": "1.1.2",
-    "commander": "2.17.1",
-    "lodash": "4.17.10",
-    "mocha": "5.2.0",
-    "moment": "2.22.2",
-    "mongodb": "3.0.11",
-    "sinon": "6.1.5",
-    "sinon-chai": "3.2.0",
-    "supertest": "3.1.0"
+    "commander": "4.0.1",
+    "mocha": "6.2.2",
+    "moment": "2.24.0",
+    "mongodb": "3.3.4",
+    "sinon": "7.5.0",
+    "sinon-chai": "3.3.0",
+    "supertest": "4.0.2"
   },
   "devDependencies": {
-    "body-parser": "1.18.3",
-    "express": "4.16.3",
-    "express-session": "1.15.6",
-    "hbs": "4.0.1",
+    "body-parser": "1.19.0",
+    "express": "4.17.1",
+    "express-session": "1.17.0",
     "passport": "0.4.0"
   }
 }

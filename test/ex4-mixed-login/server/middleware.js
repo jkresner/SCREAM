@@ -33,10 +33,14 @@ module.exports = ({auth}) => ({
 
 
   page(req, res, next) {
-    var authenticated = (req.user && req.isAuthenticated()) === true
-    var data = {authenticated,sessionID:req.sessionID}
-    if (req.user) data.user = req.user
-    res.render('index', data)
+    var prompt = "Login please"
+    var authenticated = (req.user && req.isAuthenticated()) === true    
+    if (authenticated) 
+      prompt = `Welcome ${req.user.name}!`
+  
+    res.send(`<h1>Index HBS</h1>
+      <p>${prompt}</p>
+      <p>{ session:"${req.sessionID}" }</p>`)
   },
 
 
@@ -44,7 +48,7 @@ module.exports = ({auth}) => ({
     console.log('error.mw', e.stack)
     res.status(e.status || 400)
     req.locals = Object.assign(req.locals||{},{error:e})
-    res.render('error', e)
+    res.send(`Error HBS\n\n${message}`)
   }
 
 

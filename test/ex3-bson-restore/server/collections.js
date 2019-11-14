@@ -6,7 +6,7 @@ module.exports = {
 
   Connect(cb) {
 
-    mongodb.MongoClient.connect(config.mongo.url, (err, client) => {
+    mongodb.MongoClient.connect(config.mongo.url, { useUnifiedTopology: true }, (err, client) => {
       let db = client.db(config.mongo.dbName)
       for (var name of ['Users']) {
         db.collection(name.toLowerCase(), (e, collection) =>
