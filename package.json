@@ -1,6 +1,6 @@
 {
   "name": "screamjs",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Test node.js apps faster",
   "author": "jkresner",
   "license": "MIT",
@@ -13,7 +13,7 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha test/index.js",
+    "test": "npx mocha test/index.js",
     "ex1": "node test/ex1-js-emptyapp/index.js",
     "ex2": "coffee test/ex2-coffee/index.coffee --verbose",
     "ex3": "coffee test/ex3-bson-restore/index.coffee",
@@ -22,14 +22,14 @@
   "dependencies": {
     "bson": "4.0.2",
     "chai": "4.2.0",
-    "coffeescript": "2.4.1",
+    "coffeescript": "2.5.1",
     "colors": "1.1.2",
     "commander": "4.0.1",
-    "mocha": "6.2.2",
-    "moment": "2.24.0",
-    "mongodb": "3.3.4",
-    "sinon": "7.5.0",
-    "sinon-chai": "3.3.0",
+    "mocha": "8.0.1",
+    "moment": "2.27.0",
+    "mongodb": "3.5.9",
+    "sinon": "9.0.2",
+    "sinon-chai": "3.5.0",
     "supertest": "4.0.2"
   },
   "devDependencies": {
