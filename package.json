@@ -26,7 +26,7 @@
     "colors": "1.1.2",
     "commander": "4.0.1",
     "mocha": "8.0.1",
-    "moment": "2.27.0",
+    "moment": "2.29.2",
     "mongodb": "3.5.9",
     "sinon": "9.0.2",
     "sinon-chai": "3.5.0",
